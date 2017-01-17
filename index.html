@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our  Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript" src="js/soundmanager2.js"></script>
+</head>
+
+<body>
+    <audio autoplay loop >
+        <source src="music/dadada.ogg" type="audio/ogg"/>
+        <source src="music/2.mp3" type="audio/mpeg" />
+    </audio>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* I am a coder and want to give you something special,</span><br />
+				<span class="space"/><span class="comments">* so I write some code to celebrate your birthday.</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"YuJun"</span>);<br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"LiaoZiJun"</span>);<br />
+				<span class="comments">// Oct 28, 2014, we met at douban because of IELTS. </span><br />
+				i.know(u);<br />
+				u.know(i);<br />
+				<span class="comments">// Luckily, we became friends(^<>^).</span><br />
+				u.accepted();<br />
+				i.recall();<br />
+				<span class="comments">// I'll remember the day we talked all night.</span><br />
+                u.study("British");<br />
+				i.stay("Shanghai");<br />
+				<span class="comments">// we talked by WeChat intermittently.</span><br />
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* 15.7.24—15.8.31</span><br />
+				<span class="space"/><span class="comments">* 15.9.22—15.9.30</span><br />
+				<span class="space"/><span class="comments">* 15.12.2—16.7.7</span><br />
+				<span class="space"/><span class="comments">* 16.8.19—16.9.22—forever</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				system.time(i,u);<br />
+				<span class="comments">// Every number has the special meaning.</span><br />
+				u.back("China");<br />
+				<span class="comments">// We met in Shanghai.So amazing!</span><br />
+				u.find("job"); <br />
+				<span class="comments">// I know you have uncertainty about future.That's life. </span><br />
+				u.back("Chengdu");<br />
+				<span class="comments">// You told me Dec 9 is your birthday,and I knew you were not happy.</span><br />
+				<span class="comments">// But I will remember this in the future,so be happy now.</span><br />
+				<span class="keyword">boolean</span> isAlive = <span class="keyword">true</span>;<br />
+				<span class="keyword">while</span> (isAlive) {<br />
+				<span class="placeholder"/>i.celebrate(u);<br />
+				<span class="placeholder"/>system.time(year=1,function=go);<br />
+				<span class="comments">//Knowing you is the lucky part of my life. </span><br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Jessie.L, We have met for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Happy birthday!<br/>
+						<div class="signature">- BruceYJ</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Inspired by <a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br />
+			Copyright © 2016 <a >YuJun for LiaoZiJun</a>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2014, 10, 28);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+		soundManager.setup({
+  			url: 'swf/',
+  			onready: function() {
+   			var mySound = soundManager.createSound({
+      		id: 'aSound',
+      		url: 'music/3.aac'
+    	});
+    	mySound.play();
+  		},
+  		ontimeout: function() {
+    	// Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
+ 	 }
+});
+	</script>
+</body>
+</html>
